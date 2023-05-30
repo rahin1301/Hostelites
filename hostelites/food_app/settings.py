@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'account',
+    'hostelites',
     'rest_framework.authtoken'
 ]
 
@@ -121,8 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-##AUTH_USER_MODEL = 'account.User'
-##AUTH_USER_MODEL = 'account.User'
+##AUTH_USER_MODEL = 'hostelites.User'
+##AUTH_USER_MODEL = 'hostelites.User'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',

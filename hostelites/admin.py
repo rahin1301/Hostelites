@@ -1,5 +1,5 @@
 from django.contrib import admin
-from account.models import PhoneOTP,Customer,Shopkeeper,Items,OrderItem,Order,Shopkeeper_Order_History,Customer_Order_History
+from hostelites.models import PhoneOTP,Customer,Shopkeeper,Items,OrderItem,Order,Shopkeeper_Order_History,Customer_Order_History
 
 admin.site.register(PhoneOTP)
 admin.site.register(Customer)
@@ -14,7 +14,7 @@ admin.site.register(Customer_Order_History)
 class ShopkeeperAdmin(admin.ModelAdmin):
     list_display=['id','user1']
 admin.site.register(Shopkeeper,ShopkeeperAdmin)
-##from account.models import User
+##from hostelites.models import User
 # Register your models here.
 
 

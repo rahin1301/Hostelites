@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('account', '0010_auto_20210708_0839'),
+        ('hostelites', '0010_auto_20210708_0839'),
     ]
 
     operations = [
@@ -18,11 +18,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='customer_order_history',
             name='items',
-            field=models.ManyToManyField(blank=True, null=True, to='account.OrderItem'),
+            field=models.ManyToManyField(blank=True, null=True, to='hostelites.OrderItem'),
         ),
         migrations.AddField(
             model_name='customer_order_history',
             name='shopkeeper',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='account.shopkeeper'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='hostelites.shopkeeper'),
         ),
     ]

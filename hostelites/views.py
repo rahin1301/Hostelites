@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from account.serializers import RegisterSerializer
+from hostelites.serializers import RegisterSerializer
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from rest_framework.authtoken.models import Token
@@ -11,8 +11,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view, permission_classes,authentication_classes
 import io
 from django.contrib.auth import login
-from account.models import User,PhoneOTP,Shopkeeper,Customer,Items,OrderItem,Order,Shopkeeper_Order_History,Customer_Order_History
-from account.serializers import CreateUserSerializer,LoginUserSerializer,ShopkeeperSerializer,CustomerSerializer,ItemSerializer,soh_serializer,coh_serializer
+from hostelites.models import User,PhoneOTP,Shopkeeper,Customer,Items,OrderItem,Order,Shopkeeper_Order_History,Customer_Order_History
+from hostelites.serializers import CreateUserSerializer,LoginUserSerializer,ShopkeeperSerializer,CustomerSerializer,ItemSerializer,soh_serializer,coh_serializer
 from django.core.mail import send_mail
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
@@ -210,7 +210,7 @@ def Register(request):
                     username = str(username)
                     user = User.objects.filter(username = username)
                     if user.exists():
-                        return Response({'status': False, 'detail': 'Phone Number/E-mail  already have account associated. Kindly try forgot password'})
+                        return Response({'status': False, 'detail': 'Phone Number/E-mail  already have hostelites associated. Kindly try forgot password'})
                     else:
                         old = PhoneOTP.objects.filter(username = username)
                         
